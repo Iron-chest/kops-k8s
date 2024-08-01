@@ -104,10 +104,12 @@ Suggestions:
 ## 11a) To list nodes and pod to ensure that you can make calls to the kubernetes apiSAerver and run workloads
 ```sh
 	  kubectl get nodes 
-```sh
-### 11b) Alternative you can ssh into your kubernetes master server using the command below and manage your cluster from the master
-    sh -i ~/.ssh/id_rsa ubuntu@ipAddress
+```
 
+### 11b) Alternative you can ssh into your kubernetes master server using the command below and manage your cluster from the master
+```sh
+    sh -i ~/.ssh/id_rsa ubuntu@ipAddress
+```
 ### 11b. Alternative, Enable PasswordAuthentication in the master server and assign passwd
 ```sh
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
@@ -123,10 +125,7 @@ sudo passwd ubuntu
 ```sh
    kops delete cluster --name=${NAME} --state=${KOPS_STATE_STORE} --yes  
 ``` 
-====================================================================================================
-
-
-13 # IF you want to SSH to Kubernetes Master or Nodes Created by KOPS. You can SSH From KOPS_Server
+## 13)  IF you want to SSH to Kubernetes Master or Nodes Created by KOPS. You can SSH From KOPS_Server
 ```sh
 sh -i ~/.ssh/id_rsa ubuntu@ipAddress
 ```
